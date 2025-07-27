@@ -22,6 +22,7 @@ const Register: React.FC = () => {
             credentials:'include'
         });
         const response = await url.json();
+        console.log(response)
         if(response?.message==="User created successfully" && response?.status === true){
             navigate("/login");
         }else{
