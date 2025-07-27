@@ -24,7 +24,7 @@ const Register: React.FC = () => {
         });
         const response = await url.json();
         console.log(response)
-        if(response?.message==="User created successfully" && response?.status === true){
+        if(response?.message=== "User created successfully" && response?.status === true){
             toast.success("User Created Successfully")
             navigate("/login");
         }else{
