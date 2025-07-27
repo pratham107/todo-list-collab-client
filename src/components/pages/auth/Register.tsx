@@ -1,4 +1,5 @@
-import React, { useState, FormEvent } from "react"
+import React, { useState } from "react"
+import type { FormEvent } from 'react';
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"

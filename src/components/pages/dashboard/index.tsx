@@ -31,7 +31,6 @@ const Dashboard = () => {
   const [todoName, setTodoName] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
-  const [priority, setPriority] = useState("");
   const [visibility, setVisibility] = useState("");
   const [myTodos, SetMyTodos] = useState([]);
   const [othersTodo, SetOthersTodos] = useState([])
@@ -128,13 +127,20 @@ const Dashboard = () => {
       }
   }
 
+  type TaskPayload ={
+    id: string;
+    title: string;
+    description: string;  
+    status:string
+  }
+
  useEffect(() => {
-  const taskAddedHandler = (data: any) => {
+  const taskAddedHandler = () => {
     fetchOtherTodosData();
     toast.success("A new public task was added by someone!");
   };
 
-  const taskUpdatedHandler = (data: any) => {
+  const taskUpdatedHandler = (data: TaskPayload) => {
     fetchOtherTodosData();
     toast.success(`Someone updated their task ${data.title} to ${data.status}`);
   };
