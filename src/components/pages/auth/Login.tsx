@@ -28,6 +28,8 @@ const Login: React.FC = () => {
         const response = await url.json();
         if(response?.message === "User logged in successfully" && response?.status === true){
             navigate("/dashboard");
+            localStorage.setItem("isLoggedIn",'true');
+            localStorage.setItem("token", response.token);
         }else{
             alert("Invalid credentials");
         }

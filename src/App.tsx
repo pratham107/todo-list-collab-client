@@ -30,7 +30,12 @@ function App() {
   };
 
   useEffect(() => {
-    checkIsLoggedIn();
+    const isAuth = localStorage.getItem("isLoggedIn");
+    if (isAuth === "true") {
+      setIsAuth(true);
+    }else{
+      setIsAuth(false);
+    }
   }, []);
 
   if (loading) {
