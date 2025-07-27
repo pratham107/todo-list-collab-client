@@ -186,7 +186,7 @@ useEffect(() => {
 
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 w-screen min-h-screen">
-       <div className="m-9">
+       <div className="">
          🟢 <p  className="text-white">Live</p>
        </div>
       <div className="flex items-center flex-col">

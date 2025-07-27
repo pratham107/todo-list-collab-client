@@ -104,6 +104,7 @@ const TodoList: React.FC<TodoListProps> = ({ myTodos, fetchMyTodosData }) => {
           <h2 className="text-2xl font-semibold tracking-wide">Your Todos</h2>
         </CardHeader>
         <CardContent>
+          <div className="max-h-[400px] overflow-y-auto rounded-lg border border-gray-700">
           <Table>
             <TableCaption className="text-gray-400">
               These are your created task. Stay updated with real-time changes!
@@ -173,6 +174,7 @@ const TodoList: React.FC<TodoListProps> = ({ myTodos, fetchMyTodosData }) => {
               )}
             </TableBody>
           </Table>
+          </div>
         </CardContent>
       </Card>
     </div>

@@ -55,6 +55,7 @@ const OthersTodo: React.FC<TodoListProps> = ({ othersTodo }) => {
              <h2 className="text-2xl font-semibold tracking-wide">Other Todos</h2>
            </CardHeader>
            <CardContent>
+            <div className="max-h-[400px] overflow-y-auto rounded-lg border border-gray-700">
              <Table>
                <TableCaption className="text-gray-400">
                 These are public tasks created by other team members. Stay updated with real-time changes!
@@ -81,7 +82,7 @@ const OthersTodo: React.FC<TodoListProps> = ({ othersTodo }) => {
                      <TableRow key={index}>
                        <TableCell className="font-medium">{todo.title}</TableCell>
                        <TableCell>{formatToDDMMYYYY(todo.dueDate)}</TableCell>
-                        <TableCell>
+                        <TableCell className="flex">
                           <CircleUser className="text-white" /> prathm107 
                         </TableCell>
                        <TableCell>
@@ -106,6 +107,7 @@ const OthersTodo: React.FC<TodoListProps> = ({ othersTodo }) => {
                  )}
                </TableBody>
              </Table>
+             </div>
            </CardContent>
          </Card>
        </div>
