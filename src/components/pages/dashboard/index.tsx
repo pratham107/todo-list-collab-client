@@ -136,12 +136,12 @@ useEffect(() => {
   fetchInitialTodos();
 }, []);
 
-  type TaskPayload ={
-    id: string;
-    title: string;
-    description: string;  
-    status:string
-  }
+  // type TaskPayload ={
+  //   id: string;
+  //   title: string;
+  //   description: string;  
+  //   status:string
+  // }
 
  useEffect(() => {
   const taskAddedHandler = () => {
@@ -149,9 +149,9 @@ useEffect(() => {
     toast.success("A new public task was added by someone!");
   };
 
-  const taskUpdatedHandler = (data: TaskPayload) => {
+  const taskUpdatedHandler = () => {
     fetchOtherTodosData();
-    toast.success(`Someone updated their task ${data.title} to ${data.status}`);
+    toast.success(`Someone updated their task`);
   };
 
   socket.on("task-added-by-other", taskAddedHandler);
