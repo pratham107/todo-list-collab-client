@@ -86,7 +86,7 @@ const OthersTodo: React.FC<TodoListProps> = ({ othersTodo }) => {
                        <TableCell className="font-medium">{todo.title}</TableCell>
                        <TableCell>{formatToDDMMYYYY(todo.dueDate)}</TableCell>
                         <TableCell className="flex">
-                          <CircleUser className="text-white" /> {todo?.createdBy?.username} 
+                          <CircleUser className="text-white" />{" "} {todo?.createdBy?.username} 
                         </TableCell>
                        <TableCell>
                          <span
