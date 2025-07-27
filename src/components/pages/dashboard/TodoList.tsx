@@ -251,7 +251,7 @@ const TodoList: React.FC<TodoListProps> = ({ myTodos, fetchMyTodosData }) => {
                               Edit
                             </Button>
                           </DialogTrigger>
-                          <DialogContent className="sm:max-w-[500px]">
+                          <DialogContent className="sm:max-w-[500px] bg-[#1a1a1a] border border-gray-700 text-white">
                             <DialogHeader>
                               <DialogTitle>Edit Todo</DialogTitle>
                               <DialogDescription>
