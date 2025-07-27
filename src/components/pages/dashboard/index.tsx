@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CheckCircle2, XCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 import TodoList from "./TodoList";
 import OthersTodo from "./OthersTodo";
@@ -34,6 +35,7 @@ const Dashboard = () => {
   const [visibility, setVisibility] = useState("");
   const [myTodos, SetMyTodos] = useState([]);
   const [othersTodo, SetOthersTodos] = useState([])
+  const navigate = useNavigate();
 
 
   const [openDialog, setOpenDialog] = useState(false);
@@ -161,10 +163,32 @@ useEffect(() => {
   };
 }, [socket]);
 
+  const logoutHandler=async()=>{
+      try {
+        const url = await fetch("https://todo-list-collab-server.onrender.com/auth/logout",{
+          method:"POST",
+          credentials:'include'
+        })
+        const response = await url.json();
+        if(response?.message === "User logged out successfully" && response?.status === true){
+          toast.success("Logged out successfully");
+          localStorage.clear();
+          navigate('/login')
+        }else{
+          toast.error("Failed to log out");
+        }
+      } catch (error) {
+        console.log(error)
+      }
+  }
+
 
 
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 w-screen min-h-screen">
+      <Button className="bg-red-500 text-while" onClick={logoutHandler}>
+        Logout
+      </Button>
       <div className="flex items-center flex-col">
         <Card className="border border-gray-700 shadow-2xl bg-[#111] w-full max-w-md p-4 m-6">
           <CardHeader>
