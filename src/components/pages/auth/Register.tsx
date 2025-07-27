@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { useNavigate } from "react-router-dom"
+import toast from "react-hot-toast";
 
 const Register: React.FC = () => {
   const [email, setEmail] = useState<string>("")
@@ -24,6 +25,7 @@ const Register: React.FC = () => {
         const response = await url.json();
         console.log(response)
         if(response?.message==="User created successfully" && response?.status === true){
+            toast.success("User Created Successfully")
             navigate("/login");
         }else{
             alert(response?.message);

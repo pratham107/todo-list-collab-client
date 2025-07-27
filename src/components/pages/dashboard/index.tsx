@@ -105,9 +105,7 @@ const Dashboard = () => {
       }
   }
 
-  useEffect(()=>{
-    fetchMyTodosData();
-  },[])
+  
 
   const fetchOtherTodosData=async()=>{
       try{
@@ -126,6 +124,15 @@ const Dashboard = () => {
           console.log(error)
       }
   }
+
+  const fetchInitialTodos = () => {
+  fetchMyTodosData();
+  fetchOtherTodosData();
+};
+
+useEffect(() => {
+  fetchInitialTodos();
+}, []);
 
   type TaskPayload ={
     id: string;

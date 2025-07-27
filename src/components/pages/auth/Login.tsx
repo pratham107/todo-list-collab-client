@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { useNavigate } from "react-router-dom"
+import toast from "react-hot-toast";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("")
@@ -28,6 +29,7 @@ const Login: React.FC = () => {
         const response = await url.json();
         if(response?.message === "User logged in successfully" && response?.status === true){
             navigate("/dashboard");
+            toast.success("Login Successfully")
             localStorage.setItem("isLoggedIn",'true');
             localStorage.setItem("token", response.token);
         }else{
