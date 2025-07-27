@@ -186,10 +186,11 @@ useEffect(() => {
 
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 w-screen min-h-screen">
-      <Button className="bg-red-500 text-while" onClick={logoutHandler}>
-        Logout
-      </Button>
+     
       <div className="flex items-center flex-col">
+         <Button className="bg-red-500 text-while" onClick={logoutHandler}>
+          Logout
+        </Button>
         <Card className="border border-gray-700 shadow-2xl bg-[#111] w-full max-w-md p-4 m-6">
           <CardHeader>
             <h1 className="text-white text-3xl font-semibold text-center">Dashboard</h1>
