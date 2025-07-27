@@ -7,27 +7,27 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
-  const [loading, setLoading] = useState(true); // 🔁 Add loading state
+  // const [loading] = useState(true); // 
 
-  const checkIsLoggedIn = async () => {
-    try {
-      const res = await fetch("https://todo-list-collab-server.onrender.com/auth/isLoggedIn", {
-        method: "GET",
-        credentials: "include"
-      });
-      const data = await res.json();
-      if (data.message === "User is logged in" && data.status === true) {
-        setIsAuth(true);
-      } else {
-        setIsAuth(false);
-      }
-    } catch (error) {
-      console.log(error);
-      setIsAuth(false);
-    } finally {
-      setLoading(false); // ✅ finish loading
-    }
-  };
+  // const checkIsLoggedIn = async () => {
+  //   try {
+  //     const res = await fetch("https://todo-list-collab-server.onrender.com/auth/isLoggedIn", {
+  //       method: "GET",
+  //       credentials: "include"
+  //     });
+  //     const data = await res.json();
+  //     if (data.message === "User is logged in" && data.status === true) {
+  //       setIsAuth(true);
+  //     } else {
+  //       setIsAuth(false);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     setIsAuth(false);
+  //   } finally {
+  //     setLoading(false); 
+  //   }
+  // };
 
   useEffect(() => {
     const isAuth = localStorage.getItem("isLoggedIn");
@@ -38,10 +38,7 @@ function App() {
     }
   }, []);
 
-  if (loading) {
-    return <div className="text-white text-center mt-20">Checking authentication...</div>;
-  }
-
+ 
   return (
     <>
       <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
