@@ -18,6 +18,9 @@ type Todo = {
   isPrivate: boolean;
   description: string;
   status:string;
+  createdBy:{
+    username: string;
+  }
 };
 
 type TodoListProps = {
@@ -83,7 +86,7 @@ const OthersTodo: React.FC<TodoListProps> = ({ othersTodo }) => {
                        <TableCell className="font-medium">{todo.title}</TableCell>
                        <TableCell>{formatToDDMMYYYY(todo.dueDate)}</TableCell>
                         <TableCell className="flex">
-                          <CircleUser className="text-white" /> prathm107 
+                          <CircleUser className="text-white" /> {todo?.createdBy?.username} 
                         </TableCell>
                        <TableCell>
                          <span
