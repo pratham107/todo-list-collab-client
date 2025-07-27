@@ -106,7 +106,7 @@ const TodoList: React.FC<TodoListProps> = ({ myTodos, fetchMyTodosData }) => {
         <CardContent>
           <Table>
             <TableCaption className="text-gray-400">
-              Overview of your latest tasks.
+              These are your created task. Stay updated with real-time changes!
             </TableCaption>
             <TableHeader>
               <TableRow>

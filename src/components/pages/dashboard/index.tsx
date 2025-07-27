@@ -186,7 +186,9 @@ useEffect(() => {
 
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 w-screen min-h-screen">
-     
+       <div className="m-9">
+         🟢 <p  className="text-white">Live</p>
+       </div>
       <div className="flex items-center flex-col">
          <Button className="bg-red-500 text-while" onClick={logoutHandler}>
           Logout

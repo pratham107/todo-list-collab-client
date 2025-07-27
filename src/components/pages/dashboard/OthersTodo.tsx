@@ -9,10 +9,9 @@ import {
   TableCaption,
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { CircleUser } from 'lucide-react';
 
 
-
-// Define Todo type
 type Todo = {
   title: string;
   dueDate: string;
@@ -21,7 +20,6 @@ type Todo = {
   status:string;
 };
 
-// Props for this component
 type TodoListProps = {
   othersTodo: Todo[];
 };
@@ -59,12 +57,13 @@ const OthersTodo: React.FC<TodoListProps> = ({ othersTodo }) => {
            <CardContent>
              <Table>
                <TableCaption className="text-gray-400">
-                 Overview of your latest tasks.
+                These are public tasks created by other team members. Stay updated with real-time changes!
                </TableCaption>
                <TableHeader>
                  <TableRow>
                    <TableHead className="text-white">Title</TableHead>
                    <TableHead className="text-white">Due Date</TableHead>
+                   <TableHead className="text-white">Created By</TableHead>
                    <TableHead className="text-white">Visibility</TableHead>
                    <TableHead className="text-white">Description</TableHead>
                    <TableHead className="text-white">Status</TableHead>
@@ -82,6 +81,9 @@ const OthersTodo: React.FC<TodoListProps> = ({ othersTodo }) => {
                      <TableRow key={index}>
                        <TableCell className="font-medium">{todo.title}</TableCell>
                        <TableCell>{formatToDDMMYYYY(todo.dueDate)}</TableCell>
+                        <TableCell>
+                          <CircleUser className="text-white" /> prathm107 
+                        </TableCell>
                        <TableCell>
                          <span
                            className={`px-2 py-1 text-xs font-semibold rounded-full ${
