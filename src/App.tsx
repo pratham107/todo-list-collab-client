@@ -48,11 +48,11 @@ function App() {
           />
           <Route
             path="/login"
-            element={isAuth ? <Navigate to="/dashboard" /> : <Login />}
+            element={<Login />}
           />
           <Route
             path="/register"
-            element={isAuth ? <Navigate to="/dashboard" /> : <Register />}
+            element={<Register />}
           />
           <Route
             path="/dashboard"
