@@ -32,6 +32,7 @@ const Register: React.FC = () => {
         }
      } catch (error) {
         console.log(error)
+        toast.success("Something went wrong")
      }
 
   }

@@ -64,6 +64,7 @@ const Dashboard = () => {
          if(visibility === "public"){
               socket.emit("new-task", { task: response.data });
           }
+          toast.success("Task Added Successfully")
         
         setAlert({ type: "success", message: "Task Added Successfully" });
         fetchMyTodosData();
@@ -99,6 +100,7 @@ const Dashboard = () => {
          if(response?.message==="All tasks fetched successfully" && response.status === true){
             SetMyTodos(response?.data);
          }else{
+            toast.error(response?.message)
             setAlert({type:"error",message:"Something went wrong!"});
             SetMyTodos([]);
          }
@@ -119,6 +121,7 @@ const Dashboard = () => {
          if(response?.message==="Public tasks from other users fetched successfully" && response.status === true){
             SetOthersTodos(response?.data);
          }else{
+          toast.error(response?.message)
             setAlert({type:"error",message:"Something went wrong!"});
             SetOthersTodos([]);
          }
