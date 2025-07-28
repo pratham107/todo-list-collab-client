@@ -55,6 +55,7 @@ const Register: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
+                className="placeholder:text-black"
               />
             </div>
             <div className="grid gap-2">
@@ -66,6 +67,7 @@ const Register: React.FC = () => {
                 onChange={(e) => setUserName(e.target.value)}
                 placeholder="Enter your Username Here"
                 required
+                className="placeholder:text-black"
               />
             </div>
 
@@ -78,6 +80,7 @@ const Register: React.FC = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
+                className="placeholder:text-black"
               />
             </div>
 
